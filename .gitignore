@@ -1,2 +1,6 @@
-/blog/__pycache__
+/app/blog/__pycache__
 /.env.dev
+/.vscode
+/.env.prod
+/.env.prod.db
+/Docker Desktop.lnk
