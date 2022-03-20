@@ -27,9 +27,6 @@ RUN pip install --upgrade pip
 RUN pip install pipenv
 RUN pipenv install --dev
 
-#lint
-RUN pipenv run flake8 --ignore=E501,F401 .
-
 #build wheels
 RUN pipenv lock -r > requirements.txt
 RUN pipenv run python setup.py bdist_wheel --dist-dir /usr/src/app/wheels
