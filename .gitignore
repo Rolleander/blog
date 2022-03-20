@@ -1,4 +1,4 @@
-/app/blog/__pycache__
+__pycache__
 /.env.dev
 /.vscode
 /.env.prod

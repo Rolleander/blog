@@ -1,5 +1,8 @@
 #!/bin/sh
-
+echo "Install tailwind"
+python manage.py tailwind install --no-input
+echo "Create tailwind production build"
+python manage.py tailwind build --no-input
 echo "Collecting static files..."
 python manage.py collectstatic --noinput --clear
 

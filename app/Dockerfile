@@ -10,7 +10,7 @@ ENV PYTHONUNBUFFERED 1
 
 # install psycopg2 dependencies
 RUN apk update \
-    && apk add postgresql-dev gcc python3-dev musl-dev
+    && apk add postgresql-dev gcc python3-dev musl-dev nodejs npm
 
 # copy project
 COPY . .
@@ -20,10 +20,7 @@ RUN pip install --upgrade pip
 RUN pip install pipenv
 RUN pipenv install
 
-# copy entrypoint.sh
-COPY ./entrypoint.sh .
+# run entrypoint.sh
 RUN sed -i 's/\r$//g' /usr/src/app/entrypoint.sh
 RUN chmod +x /usr/src/app/entrypoint.sh
-
-# run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]

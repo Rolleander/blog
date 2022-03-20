@@ -1,0 +1,92 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Django Tailwind</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+		<div class="dark:container mx-auto ">
+			<section class="flex items-center justify-center h-screen">
+				<h1 class="">Django + Tailwind = ❤️</h1>
+				<div class="text-lg text-gray-600 hidden lg:flex">
+					<a href="#" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">
+						Home
+					</a>
+					<a href="#" class="block mt-4 lg:inline-block hover:text-gray-700 lg:mt-0 mr-10">
+						Services
+					</a>
+					<a href="#" class="block mt-4 lg:inline-block hover:text-gray-700 lg:mt-0 mr-10">
+						Portfolio
+					</a>
+					<a href="#" class="block hover:text-gray-700 mt-4 lg:inline-block lg:mt-0 mr-10">
+						Company
+					</a>
+					<a href="#" class="block hover:text-gray-700 mt-4 lg:inline-block lg:mt-0">
+						Contact
+					</a>
+				</div>
+
+			</section>
+
+			<main class="mt-12 lg:mt-32">
+				<section class="container mx-auto px-6">
+					<!-- hero section content goes here -->
+			
+				
+			<div class="w-full lg:flex items-center">
+				<div class="w-full lg:w-1/2">
+					<h2 class="text-md lg:text-2xl text-gray-600">Market Intelligence Solutions to</h2>
+					<h1 class="text-5xl lg:text-6xl font-bold text-teal-600 mb-2 lg:mb-6">Win your market</h1>
+					<p class="text-md lg:text-xl font-light text-gray-800 mb-8">Powerful analytics tools for your business. See the exact keywords for which your competitors rank in organic search and the amount of traffic driven by each of them.</p>
+						
+									</div>
+				<div class="w-full lg:w-1/2 lg:pl-24">
+					<form action="#" class="bg-gray-100 shadow-sm rounded-md p-8">
+						<div class="mb-6">
+							<label for="name" class="mb-3 block text-gray-700">Full name:</label>
+							<input type="text" id="name" class="bg-white rounded-md border border-gray-200 p-3 focus:outline-none w-full" placeholder="John Doe" required>
+						</div>
+						<div class="mb-6">
+							<label for="email" class="mb-3 block text-gray-700">Email address:</label>
+							<input type="email" id="email" class="bg-white rounded-md border border-gray-200 p-3 focus:outline-none w-full" placeholder="john.doe@company.com" required>
+						</div>
+						<div class="mb-8">
+							<label for="company_size" class="mb-3 block text-gray-700">Company size:</label>
+							<select id="company_size" class="bg-white rounded-md border border-gray-200 p-3 focus:outline-none w-full" required>
+								<option value="">Select an option</option>
+								<option value="1">1-10</option>
+								<option value="2">10-50</option>
+								<option value="3">50-100</option>
+								<option value="4">100+</option>
+							</select>
+						</div>
+						<button type="submit" class="py-3 px-12 bg-teal-500 hover:bg-teal-600 mr-5 rounded-md text-white text-lg focus:outline-none w-full">Request Demo</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+			<div class="flex items-center">
+				<div class="mr-5 lg:mr-0">
+					<button class="py-2 px-6 rounded-md text-gray-600 hover:text-gray-700 text-lg">Sign in</button>
+					<button class="py-2 px-6 bg-teal-500 hover:bg-teal-600 rounded-md text-white text-lg">Sign up</button>
+				</div>
+				<div class="block lg">
+					<button class="flex items-center px-4 py-3 border rounded text-teal-500 border-teal-500 focus:outline-none">
+						<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+							<title>Menu</title>
+							<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+						</svg>
+					</button>
+				</div>
+			</div>
+				
+    
+		</div>
+	</body>
+</html>
