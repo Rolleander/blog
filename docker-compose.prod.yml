@@ -5,6 +5,7 @@ services:
     build:  
       context: ./app
       dockerfile: Dockerfile.prod
+    image: blog_prod
     command: gunicorn blog.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - blog_static_files:/home/app/web/staticfiles
@@ -22,6 +23,7 @@ services:
       - ./.env.prod.db
   nginx:
     build: ./nginx
+    image: blog_nginx
     volumes:
       - blog_static_files:/home/app/web/staticfiles
     ports:

@@ -8,6 +8,7 @@ django = "4.0.3"
 psycopg2-binary = "*"
 gunicorn = "20.1.0"
 django-tailwind = "*"
+django-summernote = "*"
 
 [dev-packages]
 pbr = "*"

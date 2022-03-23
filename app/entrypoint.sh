@@ -1,8 +1,5 @@
 #!/bin/sh
 
-echo "Install Tailwind CSS dependencies"
-pipenv run python manage.py tailwind install
-
 if [ "$DATABASE" = "postgres" ]
 then
     echo "Waiting for postgres..."

@@ -1,1 +1,2 @@
-call docker-compose exec web pipenv run python manage.py tailwind start
+call cd app\theme\static_src 
+call npm run dev

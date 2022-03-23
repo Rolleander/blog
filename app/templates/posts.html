@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+{% for post in post_list %}
+<div class="prose-dark prose-base">
+                testy
+                {{post.updated_on | date:"h:i d.m.Y"}}
+                testy
+        {{ post.content | safe }}
+     
+</div>
+{% endfor %}
+{% endblock %}

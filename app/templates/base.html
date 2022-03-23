@@ -1,0 +1,72 @@
+{% load static tailwind_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>./rol-ost</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+    {% tailwind_css %}
+</head>
+
+<body class="bg-neutral-900 text-blue-100  font-sans-serif leading-normal tracking-normal">
+    <div class="container mx-auto ">
+        <div class="sticky top-0 container mx-auto  bg-gradient-to-t from-neutral-800  to-neutral-900
+         border-b-2 border-gray-400  pt-5 pl-5">
+            <div class=" flex justify-center">
+                <div class="w-11/12 flex items-end">
+                    <div
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-100 text-3xl font-black ">
+                        ./rol-ost/
+                    </div>
+                    <div
+                        class="bg-clip-text text-transparent bg-gradient-to-b from-neutral-400 to-neutral-600 text-l font-black">
+                        ...just another blog
+                    </div>
+                    <div class=" font-extrabold whitespace-nowrap flex gap-8 mt-3 ml-10">
+                        {% for nav in navigation %}
+                        <div class="">
+                            <a class="p-2  hover:text-gray-300 text-blue-400" href="">{{nav.name}}</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" m-5 flex justify-center">
+            <div class="w-10/12">
+                {% block content %}
+                <!-- Content Goes here -->
+                {% endblock content %}
+                <div class="h-20"></div>
+            </div>
+        </div>
+        <footer class=" text-center lg:text-left fixed bottom-0 container mx-auto mt-5 border-t-2 border-gray-400 ">
+            <div class="text-gray-400 text-center p-2 bg-gradient-to-b from-neutral-800  to-neutral-900">
+                <div class="flex gap-5  whitespace-nowrap justify-center items-center ">
+                    <div>this page runs with:</div>
+                    {% for tech in techstack %}
+                    <div>
+                        <a href="{{tech.url}}" target="_blank" class="hover:text-blue-100">
+                            {% if tech.icon %}
+                            <img class="inline h-5" src="{% static tech.icon %}" />
+                            {% endif %}
+                            {{tech.name}}
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div>
+                    © 2022 Copyright:
+                    <span class="text-gray-300">Roland Osterrieter</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
