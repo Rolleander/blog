@@ -5,3 +5,4 @@ __pycache__
 /.env.prod.db
 /Docker Desktop.lnk
 /app/media
+*.key

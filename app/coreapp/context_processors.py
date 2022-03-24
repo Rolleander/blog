@@ -3,15 +3,15 @@ def add_variable_to_context(request):
         'navigation': [
             {
                 'name': './posts',
-                'url': ''
+                'url': 'blog'
             },
             {
                 'name': './projects',
                 'url': ''
             },
             {
-                'name': './code',
-                'url': ''
+                'name': './experience',
+                'url': 'experience'
             },
             {
                 'name': './music',

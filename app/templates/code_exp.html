@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="prose-dark prose-base mb-5 w-6/12 text-justify leading-normal text-gray-400">
+       <i>I'm passionate about exploring and working with different programming languages, new technologies and development tools. 
+        This page lists everything noteworthy I'm actively using, or gathered experience through hobby and commercial projects.
+       </i> 
+</div>
+{% for exp in codexps  %}
+<div class="">
+        <span class="font-extrabold text-blue-400">{{ exp.0 }}</span>
+        <div class="ml-10 mb-5  w-8/12">
+                {% for code in exp.1  %}
+                <span class="ml-3 inline-block whitespace-nowrap">{{code}}</span>
+                {% endfor %}
+        </div>
+</div>
+{% endfor %}
+{% endblock %}
