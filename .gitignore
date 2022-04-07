@@ -6,3 +6,5 @@ __pycache__
 /Docker Desktop.lnk
 /app/media
 *.key
+/app/mediafiles
+/app/staticfiles
