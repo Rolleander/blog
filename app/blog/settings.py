@@ -155,5 +155,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SUMMERNOTE_THEME = 'bs4'
 
 SUMMERNOTE_CONFIG = {
-    'attachment_filesize_limit': 1024 * 1024 * 10, # 10mb
+    'attachment_filesize_limit': 1024 * 1024 * 10,  # 10mb
 }
