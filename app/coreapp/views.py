@@ -12,6 +12,15 @@ class BlogView(generic.ListView):
         context['menu'] = "blog"
         return context
 
+class BlogPost(generic.DetailView):
+    model = Post
+    template_name = 'post_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['menu'] = "blog"
+        return context
+
 
 class CodeExpView(generic.TemplateView):
     template_name = "code_exp.html"

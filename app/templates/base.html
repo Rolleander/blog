@@ -23,6 +23,11 @@
             scrollbar-width: none;
             /* Firefox */
         }
+
+        .fade {
+            mask-image: linear-gradient(180deg, #000 40%, transparent);
+            -webkit-mask-image: linear-gradient(180deg, #000 40%, transparent);
+        }
     </style>
     {% tailwind_css %}
 </head>
@@ -42,7 +47,7 @@
                         ...just another blog
                     </div>
                     <div class=" font-extrabold whitespace-nowrap flex gap-8 mt-3 ml-10 text-blue-400">
-                        {% for nav in navigation %}                                                                       
+                        {% for nav in navigation %}
                         <div class=" {% if menu == nav.url %}  -translate-y-1 scale-125 text-blue-300 {% endif %} ">
                             <a class="p-2  hover:text-gray-300 " href="{% url nav.url %}">{{nav.name}}</a>
                         </div>
