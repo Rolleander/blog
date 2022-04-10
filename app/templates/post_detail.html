@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="m-1 p-3 bg-gradient-to-t from-neutral-800  to-neutral-900 rounded-lg mb-6">
-        <span class="text-right mr-2 text-neutral-300 text-sky-300 text-3xl font-bold drop-shadow-md border-b-2 border-blue-400">
+<div class="m-1 p-3 bg-gradient-to-t from-neutral-800  to-neutral-900 rounded-lg mb-6 p-4">
+        <span class="text-right mr-2 text-neutral-300 text-sky-300 text-3xl font-bold border-b-2 border-blue-400">
                 {{post.title }}
         </span>
         <span class="float-right mr-2 text-neutral-300">
-                {{post.updated_on | date:"H:i d.m.Y"}}
+                {{post.updated_on | date:"d.m.Y"}}
         </span>
         <div class="prose-dark prose-base mt-4" >
                 {{ post.content | safe }}

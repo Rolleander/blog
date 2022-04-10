@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 {% for post in post_list %}
-<div class="m-1 p-3 bg-gradient-to-t from-neutral-800  to-neutral-900 rounded-lg mb-6">
-        <span class="text-right mr-2 text-neutral-300 text-sky-300 text-3xl font-bold drop-shadow-md border-b-2 border-blue-400">
+<div class="m-1 p-3 bg-gradient-to-t from-neutral-800  to-neutral-900 rounded-lg mb-6 p-4">
+        <span class="text-right mr-2 text-neutral-300 text-sky-300 text-3xl font-bold border-b-2 border-blue-400">
                 {{post.title }}
         </span>
         <span class="float-right mr-2 text-neutral-300">
-                {{post.updated_on | date:"H:i d.m.Y"}}
+                {{post.updated_on | date:"d.m.Y"}}
         </span>
-        <div class="prose-dark prose-base fade mt-4 " style="height: 15em; overflow: hidden;">
+        <div class="prose-dark prose-base fade mt-4 " style="height: 12em; overflow: hidden;">
                 {{ post.content | safe }}
         </div>
         <div class="flex justify-center ml-6 -mt-8 -mb-1">
-                <a class="opacity-90 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full " href="{% url 'blog_post' post.slug  %}">
+                <a class="opacity-90 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full transition ease-out  hover:scale-110 duration-150" href="{% url 'blog_post' post.slug  %}">
                         Read
                 </a>
         </div>

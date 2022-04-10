@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="mt-6 w-10/12">
+        <div class="m-1 p-3 bg-gradient-to-t from-neutral-800  to-neutral-900 rounded-lg mb-6 p-8">
+                <div class="ml-6 mb-6 relative  float-right">
+                        <img class="  skew-y-3 object-cover rounded-lg" src="{% static 'me.jpg' %}" />
+                </div>
+                <p class="text-lg font-bold italic">
+                        ...Hey!
+                </p>
+                <br />
+                <p class="text-justify w-1/2">
+                        Welcome to my little webspace! <br />
+                        Finally I had the time and motivation to setup a page again, to share information about my
+                        passions and projects with whoever is interested.
+                        Some of you could know me from long ago when I was active on the german RPG-maker and Java
+                        forum, or even played my games published there.
+                        Perhaps you once stumbled upon my old page broll.brokensoft.net which I worked on back in
+                        school, with lots of small browser-games.
+                        Maybe we shared a lecture in university or you had a touchpoint with our startup some years ago?
+                        <br /> <br />
+                        Anyway, im Roland, based in Germany and addicted to developing things since I was a kid. Online
+                        I mostly use the handle broll, boogatieroll or rolleander.
+                        Have fun checking out the projects, im always happy for feedback, or even better, people who
+                        want to contribute or start something new.
+                        Im trying to keep this page updated with the most recent pojects and hopefully will post
+                        something interesting here and then. Stay tuned!
+                </p>
+                <br />
+                <br />
+                <span class="italic">
+                        Get in touch:
+                </span>
+                <a class="ml-4 opacity-90 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-full transition ease-out duration-150"
+                        href="https://github.com/Rolleander" target="_blank">
+                        Github
+                </a>
+                <a class="ml-4 opacity-90 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-full transition ease-out duration-150"
+                        href="mailto:roll2@web.de">
+                        Mail
+                </a>
+                <br />
+                <br />
+                <span class="italic">
+                        Friendly Pages:
+                </span>
+                <a class="ml-4" href="https://joh-ost.de" target="_blank"> https://joh-ost.de </a>
+        </div>
+</div>
+{% endblock %}

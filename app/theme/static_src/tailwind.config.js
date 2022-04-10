@@ -43,6 +43,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            spacing: {
+                '128': '32rem',
+            },
             typography(theme) {
                 return {
                     dark: {

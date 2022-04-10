@@ -35,7 +35,7 @@
 <body class="bg-neutral-900 text-blue-100  font-sans-serif leading-normal tracking-normal no-scrollbar">
     <div class="container mx-auto ">
         <div class="sticky top-0 container mx-auto  bg-gradient-to-t from-neutral-800  to-neutral-900
-         border-b-2 border-gray-400  pt-5 pl-5">
+         border-b-2 border-gray-400  pt-5 pl-5 z-10">
             <div class=" flex justify-center">
                 <div class="w-11/12 flex items-end">
                     <div
@@ -44,12 +44,13 @@
                     </div>
                     <div
                         class="bg-clip-text text-transparent bg-gradient-to-b from-neutral-400 to-neutral-600 text-l font-black">
-                        ...just another blog
+                        ...just another dev
                     </div>
                     <div class=" font-extrabold whitespace-nowrap flex gap-8 mt-3 ml-10 text-blue-400">
                         {% for nav in navigation %}
-                        <div class=" {% if menu == nav.url %}  -translate-y-1 scale-125 text-blue-300 {% endif %} ">
-                            <a class="p-2  hover:text-gray-300 " href="{% url nav.url %}">{{nav.name}}</a>
+                        <div
+                            class=" {% if menu == nav.url %}  -translate-y-1 scale-125 text-blue-300 {% else %} hover:scale-110  {% endif %} transition ease-out  hover:-translate-y-1  duration-150">
+                            <a class="p-2 hover:text-gray-300" href="{% url nav.url %}">{{nav.name}}</a>
                         </div>
                         {% endfor %}
                     </div>
@@ -64,13 +65,13 @@
                 <div class="h-20"></div>
             </div>
         </div>
-        <footer class=" text-center lg:text-left fixed bottom-0 container mx-auto mt-5 border-t-2 border-gray-400 ">
+        <footer class=" text-center lg:text-left fixed bottom-0 container mx-auto mt-5 border-t-2 border-gray-400 z-10">
             <div class="text-gray-400 text-center p-2 bg-gradient-to-b from-neutral-800  to-neutral-900">
                 <div class="flex gap-5  whitespace-nowrap justify-center items-center ">
                     <div>this page runs with:</div>
                     {% for tech in techstack %}
                     <div>
-                        <a href="{{tech.url}}" target="_blank" class="hover:text-blue-100">
+                        <a href="{{tech.url}}" target="_blank" class="hover:text-blue-100 transition ease-out duration-150">
                             {% if tech.icon %}
                             <img class="inline h-5" src="{% static tech.icon %}" />
                             {% endif %}

@@ -45,3 +45,17 @@ class CodeExp(models.Model):
 
     def __str__(self):
         return self.name
+
+class Project(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    link = models.CharField(max_length=50, unique=True)
+    previewFolder = models.CharField(max_length=50, unique=True)
+    description = models.TextField()
+    order = models.IntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return self.name
+

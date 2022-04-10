@@ -7,7 +7,7 @@ def add_variable_to_context(request):
             },
             {
                 'name': './projects',
-                'url': ''
+                'url': 'projects'
             },
             {
                 'name': './experience',
@@ -19,11 +19,7 @@ def add_variable_to_context(request):
             },
             {
                 'name': './about',
-                'url': ''
-            },
-            {
-                'name': './contact',
-                'url': ''
+                'url': 'about'
             },
         ],
         'techstack': [
