@@ -15,7 +15,7 @@ def add_variable_to_context(request):
             },
             {
                 'name': './music',
-                'url': ''
+                'url': 'music'
             },
             {
                 'name': './about',

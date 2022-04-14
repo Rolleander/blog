@@ -1,34 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
-<script>
-        function fadePreview() {
-
-        }
-        window.setInterval(fadePreview, 1000);
-</script>
-{% for project in project_list %}
-<div class="m-1 p-3 bg-gradient-to-t from-neutral-800  to-neutral-900 rounded-lg mb-6 mt-6 p-2 flex">
-        <div class="border-slate-400 border-2 rounded-lg  w-128 h-80 overflow-hidden relative">
-                {% for preview in project.images %}
-                <img class="w-128 h-80 object-scale-down "
-                        src="/media/projects/{{project.previewFolder}}/{{preview}}" />
-                {% endfor %}
+<div class="w-10/12">
+        {% for type in types %}
+        {% if type.1 == 'Library' %}
+        <div class="mt-6 w-full border-b-2 border-gray-400 bg-gradient-to-t from-neutral-800  to-neutral-900 ">
+                <div class="text-2xl text-sky-300">Libraries</div>
+                Open source libraries to tackle a specific problem and increase development speed
         </div>
-        <div class="ml-6 w-1/2">
-                <span
-                        class="text-right mr-2 text-neutral-300 text-sky-300 text-3xl font-bold border-b-2 border-blue-400">
-                        {{project.name }}
-                </span>
-                <div class="prose-dark prose-base mt-4">
-                        {{ project.description | safe }}
+        {% elif type.1 == 'Current' %}
+        <div class="mt-16 w-full border-b-2 border-gray-400 bg-gradient-to-t from-neutral-800  to-neutral-900 ">
+                <div class="text-2xl text-sky-300">Current</div>
+                The latest projects, either started in recent years or still actively being worked on
+        </div>
+        {% elif type.1 == 'Archive' %}
+        <div class="mt-16 w-full border-b-2 border-gray-400 bg-gradient-to-t from-neutral-800  to-neutral-900 ">
+                <div class="text-2xl text-sky-300">Archive</div>
+                Showroom for completed or interesting older projects
+        </div>
+        {% endif %}
+        {% for project in project_list %}
+        {% if project.type == type.0 %}
+        <div class="m-1 p-3 bg-gradient-to-t from-neutral-800  to-neutral-900 rounded-lg mb-6 mt-6 p-2 flex  ">
+                <div class="w-96 h-64 overflow-hidden relative grow-0 shrink-0">
+                        {% for preview in project.images %}
+                        <img class="w-96 h-64 object-scale-down drop-shadow-lg opacity-80"
+                                src="/media/projects/{{project.previewFolder}}/{{preview}}" />
+                        {% endfor %}
                 </div>
-                <div class="flex justify-center ml-3 ">
-                        <a class="opacity-90 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full transition ease-out  hover:scale-110 duration-150"
-                                href="{{ project.link }}" target="_blank">
-                                Checkout
-                        </a>
+                <div class="ml-6 ">
+                        <span class="text-right mr-2 text-neutral-300 text-sky-300 text-2xl font-bold ">
+                                {{project.name }}
+                        </span>
+                        <div class="prose-dark prose-base mt-4">
+                                {{ project.description | safe }}
+                        </div>
+                        <br />
+                        <div class="flex justify-center ml-3 ">
+                                <a class="opacity-90 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full transition ease-out  hover:scale-110 duration-150"
+                                        href="{{ project.link }}" target="_blank">
+                                        Checkout
+                                </a>
+                        </div>
                 </div>
         </div>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
 </div>
-{% endfor %}
 {% endblock %}

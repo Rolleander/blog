@@ -46,9 +46,32 @@ class CodeExp(models.Model):
     def __str__(self):
         return self.name
 
+
+PROJECT_TYPE = (
+    (0, "Library"),
+    (1, "Current"),
+    (2, "Archive"),
+)
+
+
 class Project(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    link = models.CharField(max_length=50, unique=True)
+    link = models.CharField(max_length=100, unique=True)
+    previewFolder = models.CharField(max_length=50, unique=True)
+    description = models.TextField()
+    order = models.IntegerField(default=0)
+    type = models.IntegerField(choices=PROJECT_TYPE, default=0)
+
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return self.name
+
+
+class Music(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    link = models.CharField(max_length=150, unique=True)
     previewFolder = models.CharField(max_length=50, unique=True)
     description = models.TextField()
     order = models.IntegerField(default=0)
@@ -58,4 +81,3 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
-

@@ -3,7 +3,13 @@ from django.views import generic
 from django.conf import settings
 from os import listdir
 from os.path import isfile, join
-from .models import Post, CodeExp, CODE_TYPE, Project
+from .models import Post, CodeExp, CODE_TYPE, PROJECT_TYPE, Project, Music
+
+
+def listMediaFiles(mediaPath, folder):
+    media_path = join(settings.MEDIA_ROOT, mediaPath, folder)
+    return [f for f in listdir(media_path) if isfile(join(media_path, f))]
+
 
 class BlogView(generic.ListView):
     queryset = Post.objects.filter(status=0).order_by('-created_on')
@@ -13,6 +19,7 @@ class BlogView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['menu'] = "blog"
         return context
+
 
 class BlogPost(generic.DetailView):
     model = Post
@@ -34,6 +41,7 @@ class CodeExpView(generic.TemplateView):
         context['menu'] = "experience"
         return context
 
+
 class AboutView(generic.TemplateView):
     template_name = "about.html"
 
@@ -41,6 +49,7 @@ class AboutView(generic.TemplateView):
         context = super().get_context_data(**kwargs)
         context['menu'] = "about"
         return context
+
 
 class ProjectsView(generic.ListView):
     queryset = Project.objects.order_by('-order')
@@ -51,8 +60,23 @@ class ProjectsView(generic.ListView):
 
         #  List files in the preview folder
         for project in self.object_list:
-            media_path = join(settings.MEDIA_ROOT, 'projects', project.previewFolder)
-            project.images = [f for f in listdir(media_path) if isfile(join(media_path, f))]
+            project.images = listMediaFiles('projects', project.previewFolder)
 
+        context['types'] = PROJECT_TYPE
         context['menu'] = "projects"
+        return context
+
+
+class MusicView(generic.ListView):
+    queryset = Music.objects.order_by('-order')
+    template_name = "music.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        #  List files in the preview folder
+        for music in self.object_list:
+            music.images = listMediaFiles('music', music.previewFolder)
+
+        context['menu'] = "music"
         return context
