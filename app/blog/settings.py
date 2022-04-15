@@ -13,8 +13,8 @@ import os
 from pathlib import Path
 
 print("Init Django Settings")
-print("DEBUG: "+os.environ.get("DEBUG"))
-print("SSL: "+os.environ.get("SSL"))
+print("DEBUG: " + os.environ.get("DEBUG"))
+print("SSL: " + os.environ.get("SSL"))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +31,7 @@ if int(os.environ.get("SSL", default=1)) == 1:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True   
+    CSRF_COOKIE_SECURE = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get("DEBUG", default=0))
