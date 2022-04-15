@@ -9,3 +9,4 @@ __pycache__
 /app/mediafiles
 /app/staticfiles
 /app/theme/static/css/dist/styles.css
+/pgadmin
