@@ -1,2 +1,2 @@
 #!/bin/sh
-docker-compose -f docker-compose.prod.yml stop pgadmin4_container
+docker-compose -f docker-compose.prod.yml stop pgadmin
